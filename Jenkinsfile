@@ -25,6 +25,24 @@ pipeline {
             }
 		
         }
+        
+        stage('Scan avec SonarQube') {
+            steps {
+                script{
+                    def scannerHome = tool 'sonarqube_scanner'
+                    withSonarQubeEnv('sonarqube') {
+                        
+                        bat "$(scannerHome)/bin/sonar-scanner -Dsonar.projectKey=hello -Dsonar.java.binaries=target/**"
+                        
+                        // Optionally use a Maven environment you've configured already
+                        /*withMaven(maven:'Maven 3.5') {
+                            sh 'mvn clean package sonar:sonar'
+                        }*/
+                    }                    
+                }
+            }
+		
+        }
 
         stage('Deploy to Nexus'){
             steps{
