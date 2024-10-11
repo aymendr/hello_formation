@@ -10,4 +10,17 @@ public class App {
         System.out.println("hello Chafek!");
         System.out.println("Hello Mohamed!");
     }
+
+    public static int add(int a, int b){
+        return a+b;
+    }
+
+
+    public static int mins(int a, int b){
+        return a-b;
+    }
+
+    public static int times(int a, int b){
+        return a*b;
+    }
 }
