@@ -34,7 +34,7 @@ pipeline {
                     nexusUrl: 'localhost:8081',
                     groupId: 'com.mycompany',
                     version: '1.1-SNAPSHOT',
-                    repository: 'maven-jenkins-repo',
+                    repository: 'jenkins-repo-releases',
                     credentialsId: 'nexus_credentials',
                     artifacts: [
                         [artifactId: 'hello',
