@@ -90,13 +90,12 @@
             <version>0.8.9</version>
             <executions>
               <execution>
-                  <id>pre-unit-tests</id>
                   <goals>
                       <goal>prepare-agent</goal>
                   </goals>
               </execution>
               <execution>
-                  <id>post-unit-test</id>
+                  <id>report</id>
                   <phase>test</phase>
                   <goals>
                       <goal>report</goal>
