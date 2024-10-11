@@ -23,4 +23,8 @@ public class App {
     public static int times(int a, int b){
         return a*b;
     }
+
+    public static int newOperation(int a, int b){
+        return a*b + a;
+    }
 }
