@@ -31,11 +31,8 @@ pipeline {
                 script{
                     def scannerHome = tool 'sonarqube_scanner'
                     withSonarQubeEnv('sonarqube') {
-                        
-                        // Optionally use a Maven environment you've configured already
-                        withMaven(maven:'maven3') {
+
                             bat 'mvn clean package sonar:sonar'
-                        }
                     }                    
                 }
             }
@@ -49,8 +46,8 @@ pipeline {
                     protocol: 'http',
                     nexusUrl: 'localhost:8081',
                     groupId: 'com.mycompany',
-                    version: '1.1',
-                    repository: 'jenkins-repo-releases',
+                    version: '1.1-SNAPSHOT',
+                    repository: 'maven-jenkins-repo',
                     credentialsId: 'nexus_credentials',
                     artifacts: [
                         [artifactId: 'hello',
