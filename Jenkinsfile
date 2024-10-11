@@ -18,7 +18,7 @@ pipeline {
 		
 		stage('Build') {
             steps {
-
+                echo 'Hello ici la modif'
                 // Run Maven on a Windows agent.
                 bat 'mvn clean package'
 
