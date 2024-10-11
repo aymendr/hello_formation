@@ -10,7 +10,9 @@ pipeline {
         stage('Clone Repo') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: 'dev', url: 'https://github.com/aymendr/hello_formation.git'
+
+                git branch: 'main', url: 'https://github.com/aymendr/hello_formation.git'
+
 
             }
 
@@ -18,7 +20,7 @@ pipeline {
 		
 		stage('Build') {
             steps {
-                echo 'Hello ici la modif'
+
                 // Run Maven on a Windows agent.
                 bat 'mvn clean package'
 
@@ -26,6 +28,7 @@ pipeline {
 		
         }
         
+
         stage('Scan avec SonarQube') {
             steps {
                 script{
@@ -58,6 +61,6 @@ pipeline {
                 )                
             }
         }
-        
+
     }
 }
