@@ -33,7 +33,7 @@ pipeline {
                     protocol: 'http',
                     nexusUrl: 'localhost:8081',
                     groupId: 'com.mycompany',
-                    version: 'hello-${env.BUILD_ID}',
+                    version: '1.1-SNAPSHOT',
                     repository: 'maven-jenkins-repo',
                     credentialsId: 'nexus_credentials',
                     artifacts: [
