@@ -33,13 +33,13 @@ pipeline {
                     protocol: 'http',
                     nexusUrl: 'localhost:8081',
                     groupId: 'com.mycompany',
-                    version: '1.1-SNAPSHOT',
+                    version: 'hello-${env.BUILD_ID}',
                     repository: 'maven-jenkins-repo',
                     credentialsId: 'nexus_credentials',
                     artifacts: [
                         [artifactId: 'hello',
                         classifier: '',
-                        file: 'target/hello-' + version + '.jar',
+                        file: 'target/hello-1.1-SNAPSHOT.jar',
                         type: 'jar']
                     ]
                 )                
