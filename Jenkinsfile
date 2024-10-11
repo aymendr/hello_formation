@@ -39,7 +39,7 @@ pipeline {
                     artifacts: [
                         [artifactId: 'hello',
                         classifier: '',
-                        file: 'hello-' + version + '.jar',
+                        file: 'target/hello-' + version + '.jar',
                         type: 'jar']
                     ]
                 )                
