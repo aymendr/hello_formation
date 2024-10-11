@@ -20,7 +20,7 @@ public class AppTest {
 
     @Test
     public void shoudAddNumbers(){
-        assertTrue(App.add(5, 2) == 8);
+        assertTrue(App.add(5, 2) == 7);
     }
 
     @Test
@@ -31,7 +31,7 @@ public class AppTest {
     
     @Test
     public void shoudTimesNumbers(){
-        assertTrue(App.times(5, 2) == 3);
+        assertTrue(App.times(5, 2) == 10);
     }
 
     
