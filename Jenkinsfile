@@ -32,7 +32,7 @@ pipeline {
                     def scannerHome = tool 'sonarqube_scanner'
                     withSonarQubeEnv('sonarqube') {
                         
-                        bat "$(scannerHome)/bin/sonar-scanner -Dsonar.projectKey=hello -Dsonar.java.binaries=target/**"
+                        sh "$(scannerHome)/bin/sonar-scanner -Dsonar.projectKey=hello -Dsonar.java.binaries=target/**"
                         
                         // Optionally use a Maven environment you've configured already
                         /*withMaven(maven:'Maven 3.5') {
